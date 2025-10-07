@@ -18,7 +18,10 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());
 
-//routes
+//routes  
+app.get("/", (req, res) => {
+  res.send("API is running... ✅");
+});
 app.use("/api/v1/users", require("./routes/userRoute"));
 
 //port
