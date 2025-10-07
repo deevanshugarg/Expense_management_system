@@ -18,6 +18,14 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());
 
+const corsOptions = {
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+app.use(cors(corsOptions));
+
 //routes  
 app.get("/", (req, res) => {
   res.send("API is running... ✅");
